@@ -38,7 +38,6 @@ public class DriverFactory {
 
 
 		String browserName = prop.getProperty("browser").toLowerCase().trim();
-		// String browserName = system.getProperty("browser");
 
 		System.out.println("browser name is : " + browserName);
 		//logger.info("browser name is : \" + browserName");
