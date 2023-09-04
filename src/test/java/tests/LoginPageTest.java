@@ -7,24 +7,24 @@ import base.BaseTest;
 
 public class LoginPageTest extends BaseTest{
 	
-	@Test
+	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		String actualTitle = loginPage.getLoginPageTitle();
 		Assert.assertEquals(actualTitle, "Login - My Shop");
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void loginPageURLTest() {
         String actualURL = loginPage.getLoginPageURL();
 		Assert.assertTrue(actualURL.contains("back=my-account"));
 	}
 	
-	@Test
+	@Test(priority = 3)
 	public void forgotPwdLinkExistTest() {
 		Assert.assertTrue(loginPage.isForgotPwdLinkExist());
 	}
 	
-	@Test
+	@Test(priority = 4)
 	public void loginTest() {
 		loginPage.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim());
 	}

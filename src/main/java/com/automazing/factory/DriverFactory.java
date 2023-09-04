@@ -90,17 +90,16 @@ public class DriverFactory {
 	 * @return
 	 * @throws FileNotFoundException 
 	 */
-	public Properties initProp() throws FileNotFoundException {
+	public Properties initProp() {
 
 		// mvn clean install -Denv="qa"
 		// mvn clean install
 		prop = new Properties();
-		FileInputStream ip = null;
-		
-		ip = new FileInputStream("./src/test/resources/config/config.properties");
-
 		try {
+			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
 			prop.load(ip);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

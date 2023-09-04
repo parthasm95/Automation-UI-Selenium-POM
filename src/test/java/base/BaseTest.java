@@ -1,7 +1,6 @@
 package base;
 
 
-import java.io.FileNotFoundException;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -24,7 +23,7 @@ public class BaseTest {
 
 
 	@BeforeTest
-	public void setup() throws FileNotFoundException {
+	public void setup() {
 		df = new DriverFactory();
 		prop = df.initProp();
 
