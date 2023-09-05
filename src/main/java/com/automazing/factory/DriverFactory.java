@@ -16,17 +16,14 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class DriverFactory {
-	
+
 	public WebDriver driver;
 	public Properties prop;
+	public OptionsManager optionsManager;
 
 	public static String highlight;
 
 	public static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<WebDriver>();
-	
-    //private final Logger logger = Logger.getLogger(DriverFactory.class);
-
-    
 
 	/**
 	 * this method is initializing the driver on the basis of given browser name
@@ -36,27 +33,25 @@ public class DriverFactory {
 	 */
 	public WebDriver initDriver(Properties prop) {
 
-
+		optionsManager = new OptionsManager(prop);
+		highlight = prop.getProperty("highlight").trim();
 		String browserName = prop.getProperty("browser").toLowerCase().trim();
 
 		System.out.println("browser name is : " + browserName);
-		//logger.info("browser name is : \" + browserName");
 
 		// chrome:
 		if (browserName.equalsIgnoreCase("chrome")) {
-				tlDriver.set(new ChromeDriver());
-
+			tlDriver.set(new ChromeDriver(optionsManager.getChromeOptions()));
 		}
 
 		// firefox:
 		else if (browserName.equalsIgnoreCase("firefox")) {
-				tlDriver.set(new FirefoxDriver());
-
+			tlDriver.set(new FirefoxDriver(optionsManager.getFirefoxOptions()));
 		}
 
 		// edge:
 		else if (browserName.equalsIgnoreCase("edge")) {
-				tlDriver.set(new EdgeDriver());
+			tlDriver.set(new EdgeDriver(optionsManager.getEdgeOptions()));
 		}
 
 		// safari:
@@ -71,11 +66,10 @@ public class DriverFactory {
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
 		getDriver().get(prop.getProperty("url").trim());
-		
+
 		return getDriver();
 
 	}
-
 
 	/*
 	 * get the local thread copy of the driver
@@ -88,7 +82,7 @@ public class DriverFactory {
 	 * this method is reading the properties from the .properties file
 	 * 
 	 * @return
-	 * @throws FileNotFoundException 
+	 * @throws FileNotFoundException
 	 */
 	public Properties initProp() {
 
