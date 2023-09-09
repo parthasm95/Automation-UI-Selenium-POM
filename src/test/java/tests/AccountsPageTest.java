@@ -40,8 +40,12 @@ public class AccountsPageTest extends BaseTest{
 	public void accPageItemsValueTest() {
         List<String> actualAccountItemsList = accPage.getAccountItemsList();
 		System.out.println("Actual Acc Page Headers List: " + actualAccountItemsList);
-		System.out.println("Expected Acc Page Headers List:");
 		Assert.assertEquals(actualAccountItemsList, AppConstants.EXPECTED_ACCOUNTS_PAGE_ITEMS_LIST);
+	}
+	
+	@Test
+	public void naviagteToHomePageTest() {
+		accPage.goToHomePage();
 	}
 
 }

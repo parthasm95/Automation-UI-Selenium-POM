@@ -58,5 +58,16 @@ public class AccountsPage {
 		public Boolean isHomeIconExist() {
 			return eleUtil.waitForElementVisible(homePageIcon,AppConstants.DEFAULT_SHORT_TIME_OUT).isDisplayed();
 		}
-
+		
+		public HomePage goToHomePage() {
+			if(isHomeIconExist()) {
+				eleUtil.doClick(homePageIcon);
+				return new HomePage(driver);
+			}
+			else {
+				System.out.println("Hope Page Icon does not exist...");
+				return null;
+			}
+			
+		}
 }
