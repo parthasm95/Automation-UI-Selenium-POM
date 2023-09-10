@@ -55,9 +55,35 @@ public class HomePageTest extends BaseTest {
 		Assert.assertTrue(searchPage.getSearchProductsCount() > 0);
 	}
 	
-	@Test
-	public void searchProductTest() {
-		
+	@DataProvider
+	public Object[][] getProductTestData(){
+		return new Object[][] {
+			{"dress", "Printed Dress"},
+			{"dress", "Printed Summer Dress"},
+			{"dress", "Printed Dress"},
+			{"dress", "Printed Summer Dress"},
+			{"dress", "Printed Chiffon Dress"},
+			{"dress", "Faded Short Sleeve T-shirts"},
+			{"dress", "Blouse"},
+			{"summer", "Printed Summer Dress"},
+			{"summer", "Printed Summer Dress"},
+			{"summer", "Printed Chiffon Dress"},
+			{"summer", "Faded Short Sleeve T-shirts"},
+			{"short sleeve", "Faded Short Sleeve T-shirts"},
+			{"short sleeve", "Blouse"},
+			{"short sleeve", "Printed Dress"},
+			{"short sleeve", "Printed Summer Dress"}
+		};
+	}
+	
+	@Test(dataProvider = "getProductTestData")
+	public void searchProductTest(String SearchItemName, String productName) {
+		searchPage = homePage.performSearch(SearchItemName);
+		if(searchPage.getSearchProductsCount() > 0) {
+			productInfoPage =  searchPage.selectProduct(productName);
+			String actProductHeader = productInfoPage.getProductHeaderValue();
+			Assert.assertEquals(actProductHeader, productName);
+		}
 	}
 
 }
