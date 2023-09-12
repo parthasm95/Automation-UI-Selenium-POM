@@ -9,6 +9,7 @@ import org.testng.annotations.BeforeTest;
 
 import com.automazing.factory.DriverFactory;
 import com.automazing.pages.AccountsPage;
+import com.automazing.pages.CreateAccountPage;
 import com.automazing.pages.HomePage;
 import com.automazing.pages.LoginPage;
 import com.automazing.pages.ProductInfoPage;
@@ -25,6 +26,7 @@ public class BaseTest {
 	protected HomePage homePage;
 	protected SearchPage searchPage;
 	protected ProductInfoPage productInfoPage;
+	protected CreateAccountPage createAccountPage;
 
 
 

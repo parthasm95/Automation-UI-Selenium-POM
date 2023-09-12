@@ -16,6 +16,8 @@ public class LoginPage {
 	private By password = By.id("passwd");
 	private By signInBtn = By.id("SubmitLogin");
 	private By forgotPasswordLink = By.linkText("Forgot your password?");
+	private By registrationEmailId = By.id("email_create");
+	private By createAccountBtn = By.id("SubmitCreate");
 
 	// Page Class Constructor
 	public LoginPage(WebDriver driver) {
@@ -46,6 +48,12 @@ public class LoginPage {
 		eleUtil.doSendKeys(password, pwd);
 		eleUtil.doClick(signInBtn);
 		return new AccountsPage(driver);
+	}
+	
+	public CreateAccountPage goToCreateAccountPage(String email) {
+		eleUtil.waitForElementVisible(registrationEmailId, AppConstants.DEFAULT_MEDIUM_TIME_OUT).sendKeys(email);
+		eleUtil.doClick(createAccountBtn);
+		return new CreateAccountPage(driver);
 	}
 
 }

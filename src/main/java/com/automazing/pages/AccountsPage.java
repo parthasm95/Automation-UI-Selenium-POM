@@ -18,6 +18,8 @@ public class AccountsPage {
 	// By Locators
 	private By accountItems = By.cssSelector("div#center_column span");
 	private By homePageIcon = By.cssSelector(".icon-home");
+	private By createAccSuccessMsg = By.cssSelector("p.alert.alert-success");
+	private By signOutLink = By.xpath("//a[@title='Log me out']");
 	
 	//Page Class Constructor
 	public AccountsPage(WebDriver driver) {
@@ -69,5 +71,14 @@ public class AccountsPage {
 				return null;
 			}
 			
+		}
+		
+		public String getCreateAccountSuccessMsg() {
+			return eleUtil.waitForElementVisible(createAccSuccessMsg, AppConstants.DEFAULT_MEDIUM_TIME_OUT).getText();
+		}
+		
+		public LoginPage doSignOut() {
+			eleUtil.waitForElementVisible(signOutLink, AppConstants.DEFAULT_MEDIUM_TIME_OUT).click();
+			return new LoginPage(driver);
 		}
 }

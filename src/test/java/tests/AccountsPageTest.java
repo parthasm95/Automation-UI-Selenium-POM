@@ -17,7 +17,7 @@ public class AccountsPageTest extends BaseTest{
 		accPage = loginPage.doLogin(prop.getProperty("username").trim(), prop.getProperty("password").trim());
 	}
 	
-	@Test()
+	@Test
 	public void accPageTitleTest() {
         String actTitle = accPage.getAccountsPageTitle();
 		Assert.assertEquals(actTitle, AppConstants.ACCOUNTS_PAGE_TITLE_VALUE);

@@ -9,6 +9,11 @@ public class AppConstants {
 	public static final int DEFAULT_SHORT_TIME_OUT = 5;
 	public static final int DEFAULT_LONG_TIME_OUT = 20;
 	
+	//TestData File
+	public static final String TEST_DATA_EXCEL_FILEPATH = "./src/test/resources/testdata/TestData.xlsx";
+	public static final String CREATE_ACC_SHEETNAME = "createAccount";
+	
+	
 	//Login Page
 	public static final String LOGIN_PAGE_TITLE_VALUE = "Login - My Shop";
 	public static final String LOGIN_PAGE_URL_FRACTION_VALUE = "back=my-account";
@@ -23,6 +28,7 @@ public class AppConstants {
 																						"MY ADDRESSES", 
 																						"MY PERSONAL INFORMATION", 
 																						"Home");
+	public static final String CREATE_ACC_SUCESS_MSG = "Your account has been created.";
 	
 	//Home Page
 	public static final String HOME_PAGE_TITLE_VALUE = "My Shop";
@@ -35,5 +41,6 @@ public class AppConstants {
 																						"BLOG");
 	//Search Page
 	public static final String SEARCH_PAGE_TITLE_VALUE = "Search - My Shop";
+
 
 }
