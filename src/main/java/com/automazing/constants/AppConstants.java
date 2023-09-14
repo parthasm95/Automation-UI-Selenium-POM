@@ -21,7 +21,7 @@ public class AppConstants {
 	//Accounts Page
 	public static final String ACCOUNTS_PAGE_TITLE_VALUE = "My account - My Shop";
 	public static final String ACCOUNTS_PAGE_URL_FRACTION_VALUE = "controller=my-account";
-	public static final int ACCOUNTS_PAGE_ITEMS_COUNT = 6;
+	public static final int ACCOUNTS_PAGE_ITEMS_COUNT = 5;
 	public static final List<String> EXPECTED_ACCOUNTS_PAGE_ITEMS_LIST = Arrays.asList("ADD MY FIRST ADDRESS", 
 																						"ORDER HISTORY AND DETAILS", 
 																						"MY CREDIT SLIPS",
@@ -32,9 +32,10 @@ public class AppConstants {
 	
 	//Home Page
 	public static final String HOME_PAGE_TITLE_VALUE = "My Shop";
-	public static final List<String> EXPECTED_HOME_PAGE_NAV_ITEMS_LIST = Arrays.asList("Contact us", 
-																						"Sign out", 
-																						"Partha Mohapatra");
+	public static final List<String> EXPECTED_HOME_PAGE_NAV_ITEMS_LIST = Arrays.asList( "Partha Mohapatra",
+																						"Sign out",
+																						"Contact us");
+	
 	public static final List<String> EXPECTED_HOME_PAGE_CTGR_ITEMS_LIST = Arrays.asList("WOMEN", 
 																						"DRESSES", 
 																						"T-SHIRTS",
