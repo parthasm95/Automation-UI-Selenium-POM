@@ -15,6 +15,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import com.automazing.exception.FrameworkException;
+
 public class DriverFactory {
 
 	public WebDriver driver;
@@ -61,6 +63,8 @@ public class DriverFactory {
 
 		else {
 			System.out.println("plz pass the right browser name...." + browserName);
+			throw new FrameworkException("NO BROWSER FOUND EXCEPTION...");
+			
 		}
 
 		getDriver().manage().deleteAllCookies();
@@ -89,11 +93,41 @@ public class DriverFactory {
 		// mvn clean install -Denv="qa"
 		// mvn clean install
 		prop = new Properties();
+		FileInputStream ip = null;
+		String envName = System.getProperty("env");
+		System.out.println("Running test cases on Env: " + envName);
+
 		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop.load(ip);
+			if (envName == null) {
+				System.out.println("no env is passed....Running tests on QA env...");
+				ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+			} else {
+				switch (envName.toLowerCase().trim()) {
+				case "qa":
+					ip = new FileInputStream("./src/test/resources/config/qa.config.properties");
+					break;
+				case "stage":
+					ip = new FileInputStream("./src/test/resources/config/stage.config.properties");
+					break;
+				case "dev":
+					ip = new FileInputStream("./src/test/resources/config/dev.config.properties");
+					break;
+				case "prod":
+					ip = new FileInputStream("./src/test/resources/config/config.properties");
+					break;
+
+				default:
+					System.out.println("....Wrong env is passed....No need to run the test cases....");
+				    throw new FrameworkException("WRONG ENVIRONMENT EXCEPTION...");
+				}
+
+			}
 		} catch (FileNotFoundException e) {
-			e.printStackTrace();
+
+		}
+
+		try {
+			prop.load(ip);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

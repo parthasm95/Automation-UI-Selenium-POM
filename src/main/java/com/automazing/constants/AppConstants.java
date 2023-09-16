@@ -21,7 +21,7 @@ public class AppConstants {
 	//Accounts Page
 	public static final String ACCOUNTS_PAGE_TITLE_VALUE = "My account - My Shop";
 	public static final String ACCOUNTS_PAGE_URL_FRACTION_VALUE = "controller=my-account";
-	public static final int ACCOUNTS_PAGE_ITEMS_COUNT = 5;
+	public static final int ACCOUNTS_PAGE_ITEMS_COUNT = 6;
 	public static final List<String> EXPECTED_ACCOUNTS_PAGE_ITEMS_LIST = Arrays.asList("ADD MY FIRST ADDRESS", 
 																						"ORDER HISTORY AND DETAILS", 
 																						"MY CREDIT SLIPS",
