@@ -5,5 +5,5 @@
     <classes>
       <class name="base.BaseTest"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- Please refer testrunner folder -->
 </suite> <!-- Suite -->
