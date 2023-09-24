@@ -12,8 +12,8 @@ pipeline
         {
             steps
             {
-                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                 git 'https://github.com/parthasm95/Automation-UI-Selenium-POM.git'
+                 sh "mvn -Dmaven.test.failure.ignore=true clean"
             }
             post 
             {
