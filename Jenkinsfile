@@ -15,14 +15,6 @@ pipeline
                  git 'https://github.com/parthasm95/Automation-UI-Selenium-POM.git'
                  sh "mvn -Dmaven.test.failure.ignore=true clean"
             }
-            post 
-            {
-                success
-                {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
-            }
         }
         
         
