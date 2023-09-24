@@ -12,8 +12,16 @@ pipeline
         {
             steps
             {
-                 git 'https://github.com/parthasm95/Automation-UI-Selenium-POM.git'
-                 sh "mvn -Dmaven.test.failure.ignore=true clean"
+                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
+                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
+            }
+            post 
+            {
+                success
+                {
+                    junit '**/target/surefire-reports/TEST-*.xml'
+                    archiveArtifacts 'target/*.jar'
+                }
             }
         }
         
