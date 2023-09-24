@@ -29,6 +29,7 @@ pipeline
         
         stage("Deploy to QA"){
             steps{
+            	deleteDir()
                 echo("deploy to qa")
             }
         }
