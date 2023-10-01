@@ -10,36 +10,158 @@
 		<listener class-name="com.automazing.listeners.AnnotationTransformer" />
 	</listeners>
 	
-
-	<test name="Login Page Test">
+	<!--         Login Page          -->
+	<test name="Login Page Test_chrome_116.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
+		<parameter name="testcasename" value="Login Page Test" />
 		<classes>
 			<class name="tests.LoginPageTest" />
 		</classes>
 	</test>
-	<test name="Account Page Test">
+	<test name="Login Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Login Page Test" />
+		<classes>
+			<class name="tests.LoginPageTest" />
+		</classes>
+	</test>
+	<!-- <test name="Login Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="browserversion" value="" />
+		<parameter name="testcasename" value="Login Page Test" />
+		<classes>
+			<class name="tests.LoginPageTest" />
+		</classes>
+	</test> -->
+	
+	
+	<!--         Account Page          -->
+	<test name="Account Page Test_chrome_108.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="108.0" />
+		<parameter name="testcasename" value="Account Page Test" />
 		<classes>
 			<class name="tests.AccountsPageTest" />
 		</classes>
 	</test>
-	<test name="Create Account Page Test">
+	<test name="Account Page Test_firefox_99.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="99.0" />
+		<parameter name="testcasename" value="Account Page Test" />
+		<classes>
+			<class name="tests.AccountsPageTest" />
+		</classes>
+	</test>
+	<!--<test name="Account Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="browserversion" value="" />
+		<parameter name="testcasename" value="Account Page Test" />
+		<classes>
+			<class name="tests.AccountsPageTest" />
+		</classes>
+	</test>-->
+	
+	
+	<!--         Create Account Page          -->
+	<test name="Create Account Page Test_chrome_100.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="100.0" />
+		<parameter name="testcasename" value="Create Account Page Test" />
 		<classes>
 			<class name="tests.CreateAccountPageTest" />
 		</classes>
 	</test>
-	<test name="Home Page Test">
+	<test name="Create Account Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Create Account Page Test" />
+		<classes>
+			<class name="tests.CreateAccountPageTest" />
+		</classes>
+	</test>
+	<!--<test name="Create Account Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="browserversion" value="" />
+		<parameter name="testcasename" value="Create Account Page Test" />
+		<classes>
+			<class name="tests.CreateAccountPageTest" />
+		</classes>
+	</test>-->
+	
+	
+	<!--         Home Page          -->
+	<test name="Home Page Test_chrome_100.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="100.0" />
+		<parameter name="testcasename" value="Home Page Test" />
 		<classes>
 			<class name="tests.HomePageTest" />
 		</classes>
 	</test>
-	<test name="Search Page Test">
+	<test name="Home Page Test_firefox_99.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="99.0" />
+		<parameter name="testcasename" value="Home Page Test" />
+		<classes>
+			<class name="tests.HomePageTest" />
+		</classes>
+	</test>
+	<!--<test name="Home Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="browserversion" value="" />
+		<parameter name="testcasename" value="Home Page Test" />
+		<classes>
+			<class name="tests.HomePageTest" />
+		</classes>
+	</test>-->
+	
+	
+	<!--         Search Page          -->
+	<test name="Search Page Test_chrome_116.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
+		<parameter name="testcasename" value="Search Page Test" />
 		<classes>
 			<class name="tests.SearchPageTest" />
 		</classes>
 	</test>
-	<test name="Product Info Page Test">
+	<test name="Search Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Search Page Test" />
+		<classes>
+			<class name="tests.SearchPageTest" />
+		</classes>
+	</test>
+	
+	
+	<!--         Product Info Page          -->
+	<test name="Product Info Page Test_chrome_116.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
+		<parameter name="testcasename" value="Product Info Page Test" />
 		<classes>
 			<class name="tests.ProductInfoPageTest" />
 		</classes>
 	</test>
+	<test name="Product Info Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Product Info Page Test" />
+		<classes>
+			<class name="tests.ProductInfoPageTest" />
+		</classes>
+	</test>
+	<!--<test name="Product Info Page Test_edge">
+		<parameter name="browser" value="edge" />
+		<parameter name="browserversion" value="" />
+		<parameter name="testcasename" value="Product Info Page Test" />
+		<classes>
+			<class name="tests.ProductInfoPageTest" />
+		</classes>
+	</test>-->
+	
 
 </suite>

@@ -11,12 +11,36 @@
 	</listeners>
 	
 
-	<test name="Login Page Test">
+	<test name="Login Page Test_chrome_116.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
+		<parameter name="testcasename" value="Login Page Test" />
 		<classes>
 			<class name="tests.LoginPageTest" />
 		</classes>
 	</test>
-	<test name="Account Page Test">
+	<test name="Login Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Login Page Test" />
+		<classes>
+			<class name="tests.LoginPageTest" />
+		</classes>
+	</test>
+	
+	
+	<test name="Account Page Test_chrome_116.0">
+		<parameter name="browser" value="chrome" />
+		<parameter name="browserversion" value="116.0" />
+		<parameter name="testcasename" value="Account Page Test" />
+		<classes>
+			<class name="tests.AccountsPageTest" />
+		</classes>
+	</test>
+	<test name="Account Page Test_firefox_117.0">
+		<parameter name="browser" value="firefox" />
+		<parameter name="browserversion" value="117.0" />
+		<parameter name="testcasename" value="Account Page Test" />
 		<classes>
 			<class name="tests.AccountsPageTest" />
 		</classes>
